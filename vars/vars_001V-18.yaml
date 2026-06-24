@@ -1,0 +1,25 @@
+# vars/vars_001V-18.yaml
+# Datos de cliente asignados a: Salgado Flores Marcelo Benjamin
+# EP3 - DRY7122 - Seccion 001V
+# Este archivo es la UNICA fuente de los datos del alumno.
+# Ningun script ni playbook debe tener estos valores escritos directamente.
+
+alumno:
+  codigo: "001V-18"
+  nombre: "Salgado Flores Marcelo Benjamin"
+
+cliente:
+  empresa: "Vigilancia Remota SA"
+  hostname: "RTR-VIGREM"
+
+router:
+  ip: "192.168.56.101"
+  usuario: "cisco"
+  password: "cisco123!"
+  loopback_id: 10
+  loopback_ip: "10.1.18.1"
+  loopback_mask: "255.255.255.0"
+  loopback_prefix: "24"
+  descripcion_wan: "Enlace-WAN-Chillan"
+  banner: "ACCESO RESTRINGIDO - VIGREM"
+  ntp_server: "8.8.8.8"
