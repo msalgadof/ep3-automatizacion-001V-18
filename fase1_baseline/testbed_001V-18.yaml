@@ -1,7 +1,3 @@
-# fase1_baseline/testbed_001V-18.yaml
-# Testbed pyATS - conexion por IP, nombre generico CSR1kv
-# (funciona aunque el router aun tenga su hostname de fabrica)
-
 devices:
   CSR1kv:
     os: iosxe
@@ -10,8 +6,11 @@ devices:
       default:
         username: cisco
         password: cisco123!
+      enable:
+        password: cisco123!
     connections:
       cli:
         protocol: ssh -o KexAlgorithms=diffie-hellman-group14-sha1
         ip: 192.168.56.101
-        port: 22
+        arguments:
+          connection_timeout: 60
