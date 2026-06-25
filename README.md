@@ -43,19 +43,31 @@ El trabajo cubrió: respaldo de la configuración inicial del router, habilitaci
 | RESTCONF | habilitado (restconf) |
 | HTTPS server | habilitado (ip http secure-server) |
 
-*(Completar/confirmar esta tabla con los valores reales verificados en Fase 3 y 4.)*
+Todos los valores fueron verificados de forma independiente vía NETCONF y RESTCONF (ver sección 6) y confirmados contra el estado inicial mediante el diff de Genie (Fase 5), que detectó el cambio de descripción en GigabitEthernet1 (de "VBox" a "Enlace-WAN-Chillan") y la creación de la interfaz Loopback10.
 
 ## 6. Resultados de validación
 
 | Criterio | NETCONF | RESTCONF |
 |---|---|---|
-| Hostname corporativo | _PENDIENTE_ | _PENDIENTE_ |
-| IP Loopback | _PENDIENTE_ | _PENDIENTE_ |
-| Descripción WAN | _PENDIENTE_ | _PENDIENTE_ |
-| Servidor NTP | _PENDIENTE_ | _PENDIENTE_ |
+| Hostname corporativo | CONFORME | CONFORME |
+| IP Loopback | CONFORME | CONFORME |
+| Descripción WAN | CONFORME | CONFORME |
+| Servidor NTP | CONFORME | CONFORME |
+| Máscara Loopback | CONFORME | *(no verificado por RESTCONF, fuera del set de 4 endpoints pedidos)* |
 
-*(Reemplazar por CONFORME / NO CONFORME según el resultado real de cada script de validación, una vez ejecutados en Fase 3 y 4.)*
+**Resultado NETCONF: 5/5 CONFORME**
+**Resultado RESTCONF: 4/4 CONFORME**
+**Certificado de compliance final: CONFORME**
 
 ## 7. Conclusiones
 
-*(Completar en Fase 5 con el estado final real del equipo, si fue entregado a operaciones, resultado del certificado de compliance y observaciones relevantes del proceso — por ejemplo, fallas encontradas y cómo se corrigieron.)*
+El router RTR-VIGREM quedó correctamente aprovisionado con la configuración corporativa de Vigilancia Remota SA y fue certificado como **CONFORME**, listo para pasar a operaciones. Los tres mecanismos de verificación independientes (Ansible idempotente, NETCONF y RESTCONF) coincidieron entre sí y contra los valores esperados en `vars_001V-18.yaml`, lo que da alta confianza en que el cambio fue aplicado correctamente y de forma reproducible.
+
+**Observaciones y lecciones aprendidas durante el proceso:**
+
+- **Conexión SSH no interactiva (Fase 1):** un testbed de pyATS con los campos `protocol` y `port` declarados por separado generó un comando SSH mal formado (el puerto `22` se interpretó como un comando remoto en lugar de un flag `-p`), causando un error de conexión poco descriptivo (`Failed while bringing device to "any" state`). Se resolvió retirando el campo `port` explícito.
+- **Idempotencia de Ansible (Fase 2):** la línea `no shutdown` en la interfaz Loopback nunca llegaba a estado `ok` en ejecuciones repetidas, porque IOS-XE no imprime ese comando en el `running-config` cuando es el valor por defecto (las Loopback nacen activas). Se retiró esa línea, ya innecesaria.
+- **Namespaces YANG mixtos (Fases 3 y 4):** algunos contenedores del modelo `Cisco-IOS-XE-native` (como `ntp/server`) declaran su propio namespace distinto al namespace nativo. Tanto en NETCONF (XML) como en RESTCONF (JSON, con el prefijo `Cisco-IOS-XE-ntp:server`), hubo que ajustar la extracción de datos para tener esto en cuenta.
+- **Inconsistencia del CLI `genie learn` (Fase 5):** para el snapshot final, el comando `genie learn` fallaba de forma intermitente con el mismo testbed que sí funcionaba de forma estable usando la API de Python de Genie directamente. Se optó por usar la API (`device.learn()`) en scripts propios (`snapshot_final.py`, `generar_diff.py`) en lugar del wrapper CLI, manteniendo la misma herramienta tecnológica (pyATS/Genie) tal como exige la rúbrica.
+
+Como observación menor: el archivo `rpc_reply_raw.xml` de la Fase 3 resultó más pequeño (~3.7KB) que el umbral orientativo de 5KB, simplemente porque la configuración del equipo es deliberadamente mínima (sin rutas, VLANs ni ACLs). Se optó por no inflar artificialmente el archivo para no comprometer la integridad de la evidencia.
