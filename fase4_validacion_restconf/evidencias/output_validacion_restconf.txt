@@ -1,0 +1,25 @@
+======================================================================
+Script        : validacion_restconf.py
+Fecha/Hora    : 2026-06-25 14:14:58
+Host VM       : labvm
+======================================================================
+Alumno        : 001V-18 - Salgado Flores Marcelo Benjamin
+Cliente       : Vigilancia Remota SA
+----------------------------------------------------------------------
+[OK]   GET https://192.168.56.101/restconf/data/Cisco-IOS-XE-native:native/hostname
+       -> guardado en responses/get_hostname.json
+[OK]   GET https://192.168.56.101/restconf/data/ietf-interfaces:interfaces/interface=Loopback10
+       -> guardado en responses/get_loopback.json
+[OK]   GET https://192.168.56.101/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet1
+       -> guardado en responses/get_interfaces.json
+[OK]   GET https://192.168.56.101/restconf/data/Cisco-IOS-XE-native:native/ntp
+       -> guardado en responses/get_ntp.json
+----------------------------------------------------------------------
+[OK]   Hostname corporativo   | esperado: RTR-VIGREM           | obtenido: RTR-VIGREM
+[OK]   IP Loopback            | esperado: 10.1.18.1            | obtenido: 10.1.18.1
+[OK]   Descripcion WAN        | esperado: Enlace-WAN-Chillan   | obtenido: Enlace-WAN-Chillan
+[OK]   Servidor NTP           | esperado: 8.8.8.8              | obtenido: 8.8.8.8
+----------------------------------------------------------------------
+Resultado: 4/4 criterios [OK]
+RESULTADO GLOBAL: CONFORME
+======================================================================
