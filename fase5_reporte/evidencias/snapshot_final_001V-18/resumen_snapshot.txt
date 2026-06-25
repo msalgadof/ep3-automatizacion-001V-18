@@ -1,0 +1,7 @@
+=== SNAPSHOT FINAL (post-aprovisionamiento) ===
+Fecha/Hora   : 2026-06-25 14:52:38
+Dispositivo  : CSR1kv
+Testbed      : ../fase1_baseline/testbed_001V-18.yaml
+Feature 'interface' -> evidencias/snapshot_final_001V-18/interface_iosxe_CSR1kv_ops.txt
+Feature 'platform' -> evidencias/snapshot_final_001V-18/platform_iosxe_CSR1kv_ops.txt
+Feature 'routing' -> evidencias/snapshot_final_001V-18/routing_iosxe_CSR1kv_ops.txt

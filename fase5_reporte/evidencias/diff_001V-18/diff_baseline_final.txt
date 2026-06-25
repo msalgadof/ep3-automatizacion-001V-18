@@ -1,0 +1,16 @@
+======================================================================
+DIFF BASELINE (Fase 1) vs SNAPSHOT FINAL (Fase 5)
+Fecha/Hora: 2026-06-25 14:56:19
+Baseline  : ../fase1_baseline/evidencias/baseline_001V-18/interface_iosxe_CSR1kv_ops.txt
+Final     : evidencias/snapshot_final_001V-18/interface_iosxe_CSR1kv_ops.txt
+======================================================================
+Se detectaron 7 lineas de cambio:
+----------------------------------------------------------------------
+~ GigabitEthernet1.description:
+    antes  : VBox
+    despues: Enlace-WAN-Chillan
++ Interfaz NUEVA: Loopback10
+    + description: Loopback de gestion - Vigilancia Remota SA
+    + ipv4: {'10.1.18.1/24': {'ip': '10.1.18.1', 'prefix_length': '24', 'secondary': False}}
+    + enabled: True
+======================================================================

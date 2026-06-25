@@ -1,0 +1,110 @@
+[2026-06-25 14:22:03,248] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:22:03,249] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:22:03,305] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 140592861612640 +++
+[2026-06-25 14:22:03,305] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:26:38,558] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:26:38,559] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:26:38,603] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 139840504794128 +++
+[2026-06-25 14:26:38,604] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:30:29,779] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:30:29,780] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:30:29,829] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 140559421742096 +++
+[2026-06-25 14:30:29,829] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+RTR-VIGREM#[2026-06-25 14:32:51,342] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:32:51,343] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:32:51,386] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 140539277200400 +++
+[2026-06-25 14:32:51,386] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:34:11,855] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:34:11,855] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:34:11,900] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 139645777079312 +++
+[2026-06-25 14:34:11,900] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:35:42,306] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:35:42,306] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:35:42,351] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 139716248910864 +++
+[2026-06-25 14:35:42,351] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:37:31,816] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:37:31,816] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:37:31,863] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 140688773278736 +++
+[2026-06-25 14:37:31,863] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:39:44,092] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:39:44,092] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:39:44,139] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 139910154529808 +++
+[2026-06-25 14:39:44,139] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:42:20,883] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:42:20,883] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:42:20,928] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 140085462981648 +++
+[2026-06-25 14:42:20,928] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#[2026-06-25 14:43:40,948] +++ CSR1kv logfile evidencias/snapshot_final_001V-18/connection_CSR1kv.txt +++
+[2026-06-25 14:43:40,949] +++ Unicon plugin iosxe +++
+Password: 
+[2026-06-25 14:43:40,994] +++ connection to spawn: ssh -l cisco -o KexAlgorithms=diffie-hellman-group14-sha1 192.168.56.101, id: 140573519371280 +++
+[2026-06-25 14:43:40,994] connection to CSR1kv
+
+
+ACCESO RESTRINGIDO - VIGREM
+
+
+
+RTR-VIGREM#

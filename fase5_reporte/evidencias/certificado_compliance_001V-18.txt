@@ -1,0 +1,28 @@
+======================================================================
+CERTIFICADO DE COMPLIANCE - EP3 DRY7122
+======================================================================
+Alumno        : 001V-18 - Salgado Flores Marcelo Benjamin
+Cliente       : Vigilancia Remota SA
+Equipo        : RTR-VIGREM
+Fecha emision : 2026-06-25 14:57:53
+----------------------------------------------------------------------
+RESUMEN DE VERIFICACIONES
+----------------------------------------------------------------------
+  Cambios detectados (Genie diff) : SI
+  Validacion NETCONF              : CONFORME
+  Validacion RESTCONF             : CONFORME
+----------------------------------------------------------------------
+CONFIGURACION APLICADA
+----------------------------------------------------------------------
+  Hostname            : RTR-VIGREM
+  Banner de acceso    : ACCESO RESTRINGIDO - VIGREM
+  Servidor NTP        : 8.8.8.8
+  Descripcion WAN     : Enlace-WAN-Chillan
+  Loopback10         : 10.1.18.1/255.255.255.0
+  NETCONF/RESTCONF    : habilitados
+======================================================================
+RESULTADO FINAL DE COMPLIANCE: CONFORME
+======================================================================
+El equipo cumple con la configuracion corporativa estandar
+y queda certificado como listo para operar.
+======================================================================
