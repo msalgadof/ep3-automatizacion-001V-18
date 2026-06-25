@@ -1,0 +1,79 @@
+---
+# fase2_aprovisionamiento/playbook_001V-18.yaml
+# EP3 - DRY7122 - Alumno 001V-18 (Salgado Flores Marcelo Benjamin)
+
+- name: EP3 - Aprovisionamiento corporativo CSR1kv (001V-18)
+  hosts: routers
+  gather_facts: no
+  vars_files:
+    - ../vars/vars_001V-18.yaml
+
+  tasks:
+
+    # --- Guard de idempotencia para el respaldo ---
+    - name: Verificar si ya existe un respaldo previo
+      stat:
+        path: "{{ playbook_dir }}/respaldo/backup_{{ alumno.codigo }}.cfg"
+      register: backup_existente
+      delegate_to: localhost
+
+    # 1. Respaldar la configuracion actual (antes de cualquier cambio)
+    - name: "1. Respaldar configuracion actual del router"
+      ios_config:
+        backup: yes
+        backup_options:
+          filename: "backup_{{ alumno.codigo }}.cfg"
+          dir_path: "{{ playbook_dir }}/respaldo"
+      when: not backup_existente.stat.exists
+
+    # 2. Habilitar NETCONF
+    - name: "2. Habilitar NETCONF (netconf-yang)"
+      ios_config:
+        lines:
+          - netconf-yang
+
+    # 3. Habilitar RESTCONF
+    - name: "3. Habilitar RESTCONF"
+      ios_config:
+        lines:
+          - restconf
+
+    # 4. Habilitar servidor HTTP seguro
+    - name: "4. Habilitar servidor HTTP seguro (ip http secure-server)"
+      ios_config:
+        lines:
+          - ip http secure-server
+
+    # 5. Configurar hostname corporativo
+    - name: "5. Configurar hostname corporativo"
+      ios_config:
+        lines:
+          - "hostname {{ cliente.hostname }}"
+
+    # 6. Configurar banner de acceso (modulo dedicado: idempotente con texto multilinea)
+    - name: "6. Configurar banner de acceso"
+      ios_banner:
+        banner: motd
+        text: "{{ router.banner }}"
+        state: present
+
+    # 7. Configurar servidor NTP
+    - name: "7. Configurar servidor NTP"
+      ios_config:
+        lines:
+          - "ntp server {{ router.ntp_server }}"
+
+    # 8. Configurar descripcion de interfaz WAN (GigabitEthernet1)
+    - name: "8. Configurar descripcion de interfaz GigabitEthernet1"
+      ios_config:
+        lines:
+          - "description {{ router.descripcion_wan }}"
+        parents: "interface GigabitEthernet1"
+
+    # 9. Crear interfaz Loopback de gestion con IP
+    - name: "9. Crear interfaz Loopback de gestion"
+      ios_config:
+        lines:
+          - "description Loopback de gestion - {{ cliente.empresa }}"
+          - "ip address {{ router.loopback_ip }} {{ router.loopback_mask }}"
+        parents: "interface Loopback{{ router.loopback_id }}"
