@@ -1,0 +1,19 @@
+======================================================================
+Script        : validacion_netconf.py
+Fecha/Hora    : 2026-06-25 13:44:07
+Host VM       : labvm
+======================================================================
+Alumno        : 001V-18 - Salgado Flores Marcelo Benjamin
+Cliente       : Vigilancia Remota SA
+----------------------------------------------------------------------
+XML crudo de la respuesta guardado en: evidencias/rpc_reply_raw.xml
+----------------------------------------------------------------------
+[OK]   Hostname corporativo   | esperado: RTR-VIGREM           | obtenido: RTR-VIGREM
+[OK]   IP Loopback            | esperado: 10.1.18.1            | obtenido: 10.1.18.1
+[OK]   Mascara Loopback       | esperado: 255.255.255.0        | obtenido: 255.255.255.0
+[OK]   Descripcion WAN        | esperado: Enlace-WAN-Chillan   | obtenido: Enlace-WAN-Chillan
+[OK]   Servidor NTP           | esperado: 8.8.8.8              | obtenido: 8.8.8.8
+----------------------------------------------------------------------
+Resultado: 5/5 criterios [OK]
+RESULTADO GLOBAL: CONFORME
+======================================================================
